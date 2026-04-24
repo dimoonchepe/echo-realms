@@ -1,0 +1,26 @@
+---
+import { itunesImage } from '../utils/itunesImage';
+interface Props {
+  slug: string;
+  artist: string;
+  title: string;
+  coverURL?: string;
+  artFrom?: string;
+  artVia?: string;
+  artTo?: string;
+  artLabel?: string;
+}
+const { slug, artist, title, coverURL, artFrom = '#1e1e1e', artVia = '#3a3a3a', artTo = '#555', artLabel } = Astro.props;
+const initials = artLabel ?? artist.split(' ').map((w: string) => w[0]).join('').slice(0, 3).toUpperCase();
+const thumbURL = itunesImage(coverURL, 300) ?? coverURL;
+---
+<a class="polaroid" href={`/albums/${slug}`} title={`${artist} — ${title}`}>
+  {thumbURL
+    ? <img src={thumbURL} alt={artist} style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" loading="lazy" />
+    : <div style={`position:absolute;inset:0;background:linear-gradient(135deg,${artFrom} 0%,${artVia} 50%,${artTo} 100%);`}></div>
+  }
+  <div class="album-hover">
+    <span class="p-artist">{artist}</span>
+    <span class="p-title">{title}</span>
+  </div>
+</a>
