@@ -20,14 +20,15 @@ const isListened = !!(data.listenSessionDate && data.listenSessionDate.trim() !=
 const status = isListened ? 'listened' : 'to-listen';
 
 const { Content } = await render(album);
+const hasNotes = !!(album.body && album.body.trim() !== '');
 
 // Build streaming platforms list
 const platforms = [
-  { key: 'spotify',    label: 'Spotify',       url: data.spotifyURL,      dotClass: 'dot-spotify' },
-  { key: 'apple',      label: 'Apple Music',    url: data.appleMusicURL,   dotClass: 'dot-apple' },
   { key: 'youtube',    label: 'YouTube Music',  url: data.youtubeMusicURL, dotClass: 'dot-youtube' },
   { key: 'bandcamp',   label: 'Bandcamp',       url: data.bandcampURL,     dotClass: 'dot-bandcamp' },
+  { key: 'spotify',    label: 'Spotify',       url: data.spotifyURL,      dotClass: 'dot-spotify' },
   { key: 'deezer',     label: 'Deezer',         url: data.deezerURL,       dotClass: 'dot-deezer' },
+  { key: 'apple',      label: 'Apple Music',    url: data.appleMusicURL,   dotClass: 'dot-apple' },
 ].filter(p => p.url && p.url.trim() !== '');
 
 const backHref  = isListened ? '/listened'  : '/candidates';
@@ -287,40 +288,39 @@ const coverLargeURL = itunesImage(data.coverURL, 600) ?? data.coverURL;
         </>
       )}
 
-      {isListened
-        ? (
-          <div>
-            <div class="notes-wrapper" id="notes">
-              <button class="notes-toggle" id="notes-toggle" aria-expanded="false" aria-controls="notes-body">
-                <div class="notes-toggle-left">
-                  <div class="notes-toggle-icon">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                      <path d="M2 3.5h10M2 7h7M2 10.5h5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-                    </svg>
-                  </div>
-                  <div class="notes-toggle-text">
-                    <span class="notes-toggle-title">A letter from the listener</span>
-                    <span class="notes-toggle-sub">Best opened after you've heard it</span>
-                  </div>
+      {!isListened && (
+        <div class="not-listened-note">
+          This album is waiting for its evening. Notes will appear here after the listening.
+        </div>
+      )}
+
+      {isListened && hasNotes && (
+        <div>
+          <div class="notes-wrapper" id="notes">
+            <button class="notes-toggle" id="notes-toggle" aria-expanded="false" aria-controls="notes-body">
+              <div class="notes-toggle-left">
+                <div class="notes-toggle-icon">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M2 3.5h10M2 7h7M2 10.5h5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                  </svg>
                 </div>
-                <svg class="notes-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
-              <div class="notes-body" id="notes-body" role="region" aria-labelledby="notes-toggle">
-                <div class="notes-content">
-                  <Content />
+                <div class="notes-toggle-text">
+                  <span class="notes-toggle-title">A letter from the listener</span>
+                  <span class="notes-toggle-sub">Best opened after you've heard it</span>
                 </div>
+              </div>
+              <svg class="notes-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="notes-body" id="notes-body" role="region" aria-labelledby="notes-toggle">
+              <div class="notes-content">
+                <Content />
               </div>
             </div>
           </div>
-        )
-        : (
-          <div class="not-listened-note">
-            This album is waiting for its evening. Notes will appear here after the listening.
-          </div>
-        )
-      }
+        </div>
+      )}
     </div>
   </div>
 
