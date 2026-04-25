@@ -169,6 +169,15 @@ const candidates = allAlbums.filter(a => !a.data.listenSessionDate || a.data.lis
       padding: 2px 7px;
       border-radius: 20px;
     }
+
+    @media (max-width: 640px) {
+      .hero { padding: 100px 24px 60px; }
+      .portal-wrap { margin-bottom: 48px; }
+      .portal { width: 160px; height: 160px; }
+      .collection-links { flex-direction: column; width: 100%; }
+      .coll-sep { width: 100%; height: 1px; }
+      .coll-link { width: 100%; justify-content: space-between; padding: 14px 24px; }
+    }
   </style>
 </head>
 <body>
@@ -200,19 +209,16 @@ const candidates = allAlbums.filter(a => !a.data.listenSessionDate || a.data.lis
         The Listened
         <span class="coll-link-count">{listened.length}</span>
       </a>
-      <div class="coll-sep"></div>
-      <a class="coll-link" href="/candidates">
-        Candidates
-        <span class="coll-link-count">{candidates.length}</span>
-      </a>
     </div>
   </main>
 
   <Footer />
 
-  <script define:vars={{ allSlugs: allAlbums.map(a => a.id) }}>
-    document.getElementById('portal-btn').addEventListener('click', function () {
-      const slug = allSlugs[Math.floor(Math.random() * allSlugs.length)];
+  <script define:vars={{ listenedSlugs: listened.map(a => a.id), candidateSlugs: candidates.map(a => a.id) }}>
+    document.getElementById('portal-btn').addEventListener('click', function (e) {
+      const pool = e.shiftKey ? candidateSlugs : listenedSlugs;
+      if (!pool.length) return;
+      const slug = pool[Math.floor(Math.random() * pool.length)];
       window.location.href = '/albums/' + slug;
     });
   </script>

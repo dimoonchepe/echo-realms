@@ -216,6 +216,18 @@ const coverLargeURL = itunesImage(data.coverURL, 600) ?? data.coverURL;
         border-top: 1px solid var(--border);
       }
     }
+    @media (max-width: 640px) {
+      .art-panel {
+        height: 72vw;
+        min-height: 220px;
+        padding: 20px;
+      }
+      .info-panel {
+        padding: 32px 20px 64px;
+        gap: 28px;
+      }
+      .album-title { font-size: clamp(24px, 7vw, 36px); }
+    }
   </style>
 </head>
 <body>

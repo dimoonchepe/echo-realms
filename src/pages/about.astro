@@ -87,6 +87,16 @@ import Footer from '../components/Footer.astro';
       transition: color 0.2s, border-color 0.2s;
     }
     .about-links a:hover { color: var(--gold); border-color: var(--gold-dim); }
+
+    @media (max-width: 640px) {
+      .about-container {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: calc(var(--nav-h) + 40px);
+        padding-bottom: 80px;
+      }
+      .about-links { gap: 16px; }
+    }
   </style>
 </head>
 <body>
