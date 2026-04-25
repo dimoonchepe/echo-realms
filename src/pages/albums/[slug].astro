@@ -4,7 +4,6 @@ import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import { getCollection, render } from 'astro:content';
 import { itunesImage } from '../../utils/itunesImage';
-import { itunesImage } from '../../utils/itunesImage';
 
 export async function getStaticPaths() {
   const albums = await getCollection('albums');
@@ -259,16 +258,15 @@ const coverLargeURL = itunesImage(data.coverURL, 600) ?? data.coverURL;
       <div class="album-meta">
         <div class="album-status-tag">
           <span class="status-dot" style={`background:${statusColor};`}></span>
-          {statusText}
+          {isListened && data.listenSessionDate
+            ? `Listened · ${data.listenSessionDate}`
+            : statusText}
         </div>
         <p class="album-artist">{data.artist}</p>
         <h1 class="album-title">{data.title}</h1>
         <div class="album-details">
           <span>{data.year}</span>
           {data.genre && <><span class="sep"></span><span>{data.genre}</span></>}
-          {isListened && data.listenSessionDate && (
-            <><span class="sep"></span><span>{data.listenSessionDate}</span></>
-          )}
         </div>
       </div>
 
