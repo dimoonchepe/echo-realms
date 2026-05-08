@@ -8,5 +8,5 @@ bandcampURL: 'https://smalltape.bandcamp.com/album/the-ocean'
 spotifyURL: 'https://open.spotify.com/album/3knNJF58VBIevebSUHl4eg?si=eQ7cLbAETtiqu0e2pChcsg'
 appleMusicURL: 'https://music.apple.com/ru/album/the-ocean/1222406583'
 deezerURL: 'https://link.deezer.com/s/336jAbm1B9tfCCMGyNEsG'
-listenSessionDate: ''
+listenSessionDate: '2026-05-06'
 ---
