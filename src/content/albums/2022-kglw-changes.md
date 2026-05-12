@@ -8,5 +8,5 @@ bandcampURL: ''
 spotifyURL: ''
 appleMusicURL: ''
 deezerURL: 'https://link.deezer.com/s/336kReDJuxjgDeWBo6ANf'
-listenSessionDate: ''
+listenSessionDate: '2026-05-12'
 ---
