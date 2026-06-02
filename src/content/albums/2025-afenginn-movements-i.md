@@ -8,5 +8,5 @@ bandcampURL: 'https://afenginn.bandcamp.com/album/movements-i'
 spotifyURL: 'https://open.spotify.com/album/2A6EGRurUNZHqN49Dc7Nss?si=0ax1iGQxT-un9EKS-RL6hw'
 appleMusicURL: 'https://music.apple.com/ru/album/movements-i/1835505676'
 deezerURL: 'https://link.deezer.com/s/336jr33POX9FfWBig3ewS'
-listenSessionDate: ''
+listenSessionDate: '2026-05-19'
 ---
