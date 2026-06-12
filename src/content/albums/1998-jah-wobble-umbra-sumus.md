@@ -8,5 +8,5 @@ bandcampURL: ''
 spotifyURL: 'https://open.spotify.com/album/4XWVbu7P3ZIlnjxk0wv56O?si=UrWFKn4kTTOtxnHxGoHvrA'
 appleMusicURL: 'https://music.apple.com/ua/album/umbra-sumus/1583231026'
 deezerURL: 'https://link.deezer.com/s/33wcW43660DRTFmjF7Vtu'
-listenSessionDate: ''
+listenSessionDate: '2026-06-11'
 ---
