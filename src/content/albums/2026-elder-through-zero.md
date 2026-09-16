@@ -8,5 +8,5 @@ bandcampURL: 'https://bluesfuneralrecordings.bandcamp.com/album/through-zero'
 spotifyURL: 'https://open.spotify.com/album/4mfX9k6ESpTZbahuoguR42?si=1bUoB48eSlKy6U7mGvEpqQ'
 appleMusicURL: 'https://music.apple.com/ua/album/through-zero/1892072805'
 deezerURL: 'https://link.deezer.com/s/33p3E4CU2q0rwmQyiqejW'
-listenSessionDate: ''
+listenSessionDate: '2026-08-06'
 ---

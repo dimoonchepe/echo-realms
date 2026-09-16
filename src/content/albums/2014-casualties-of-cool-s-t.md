@@ -8,5 +8,5 @@ bandcampURL: ''
 spotifyURL: 'https://open.spotify.com/album/7pJluMb96vJRrrOJHF4THD?si=1680046082474996'
 appleMusicURL: 'https://music.apple.com/us/album/casualties-of-cool/865373053'
 deezerURL: 'https://link.deezer.com/s/336qxzNQNadV0cRQ1TheM'
-listenSessionDate: ''
+listenSessionDate: '2026-09-15'
 ---
