@@ -8,5 +8,5 @@ bandcampURL: 'https://robertkanaan.bandcamp.com/album/elysium'
 spotifyURL: 'https://open.spotify.com/album/7fYjVb0pSxVjf8WqVkxJzc?si=177105d103eb4d5e'
 appleMusicURL: 'https://music.apple.com/ru/album/elysium/1881404984'
 deezerURL: 'https://link.deezer.com/s/337YUQRENiDTLIFhsmeUC'
-listenSessionDate: ''
+listenSessionDate: '2026-06-23'
 ---
